@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  font-size: 63%;
+  font-family: 'STIX Two Math', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+:root {
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Navbar */
+.navbar{
+  background-color:var(--dark-blue);
+  padding: 1.8rem 5.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar > h2 > a {
+  color: white;
+  margin-left: 10rem;
+  font-size: 2.8rem;
+  text-decoration: none;
+}
+
+.navbar > ul{
+  display: flex;
+  margin-right: 12rem;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li{
+  list-style: none;
+}
+ul li a.navlink{
+  text-decoration: none;
+  font-size:2.1rem;
+  color: white;
+  margin-left: 2rem;
+}
+
+ul li a.navlink:hover{
+  color: var(--lime-green);
+  text-decoration: underline;
+  text-decoration-color: var(--lime-green);
+}
+/* Home page */
+section.homesec{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+padding: 6rem 0;
+background-color: var(--very-light-gray);
+}
+
+section.homesec >div.box-1{
+flex-basis: 40%;
+display: flex;
+flex-direction: column;
+align-items:center;
+}
+
+section.homesec >div.box-1  div > h1{
+  font-size: 2.6rem;
+  margin: .5rem 0;
+}
+
+section.homesec >div.box-1 div > button{
+margin: 1rem 0;
+/* margin-right: 18rem; */
+padding: .4rem .7rem;
+border-radius: 1rem;
+border: 1px solid teal;
+transition: all .5s ease-in-out;
+}
+
+section.homesec >div.box-1 div > button:hover{
+  background-color: teal;
+  color: white;
+}
+
+section.homesec >div.box-1 div > h1 > span{
+  color: teal;
+  text-transform: capitalize;
+}
+
+section.homesec >div.box-1 div > button a.btnlink{
+  text-decoration: none;
+  font-size:1.6rem;
+  color: black;
+}
+
+section.homesec >div.box-1 div > button a.btnlink:hover{
+  color: white;
+}
+
+section.homesec >div.box-2{
+flex-basis: 50%;  
+
+}
+section.homesec >div.box-2 img{
+  width: 500px;
+  height: 500px;
+  margin-left: 9rem;
+  animation: up-down 4s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down{
+  0%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(-10px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Service */
+div#service-header{
+ padding-top: 1rem;
+ border: 1px solid red;
+}
+
+div#service-header h1#info{
+  padding: 2rem 0;
+  text-align: center;
+  font-weight:.8rem;
+  font-size: 2.5rem;
+}
+
+div#service{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+div#card{
+  width: 23%;
+  margin: 1rem 1.4rem;
+}
+
+div#card div#image img{
+  width: 31rem;
+  height: 20rem;
+}
+
+div#service-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+
+div#service-container h1{
+  font-weight:400;
+}
+
+div#service-container>button{
+  padding: .3rem ;
+  margin: .7rem 0;
+  color: teal;
+  border: 1px solid teal;
+transition: all .5s ease-in-out;
+}
+
+div#service-container>button:hover{
+  background-color: teal;
+  color: white;
+}
+/* Conatct page */
+section#contact{
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 5rem 0;
+}
+
+section#contact h1{
+  font-size: x-large;
+  padding: 1rem 0;
+ font-weight: 1rem;
+}
+
+section#contact div.form{
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+margin: 1rem 0;
+}
+
+input,textarea{
+  margin: .6rem 0;
+  padding: .7rem 0;
+  width: 35rem;
+}
+label {
+  font-size: 1.6rem;
+}
+button[type='submit']{
+  padding: .4rem;
+  color: teal;
+  font-size: medium;
+  border: 2px solid teal;
+transition: all .3s ease-in-out;
+}
+
+button[type='submit']:hover{
   color: white;
+  background-color: teal;
+}
+/* Error page */
+div.errimg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+div.errimg img{
+  width: 400px;
+  height: 250px;
+  margin-top: 10rem; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.errimg > h1{
+  color: var(--dark-blue);
+}
+
+p#copyright{
+  text-align: center;
+  font-size:small;
+  padding: 2.5rem 0;
 }
